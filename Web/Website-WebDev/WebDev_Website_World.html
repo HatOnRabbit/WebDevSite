@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body, #page {
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+        }
+        .marquee {
+			white-space: nowrap;
+			overflow: hidden;
+			animation: marquee 10s linear infinite;
+		}
+		
+		@keyframes marquee {
+			0% {transform: translateX(0);}
+			100% {transform: translateX(-100%);}
+		}
+
+        #RightBoard {
+            float: right;
+            padding-top: 0px;
+        }
+
+        .container {
+            width: 100%; /* Set the width of the container */
+            margin: 0 auto; /* Center the container horizontally */
+            padding: 5px; /* Add some padding to the container */
+            margin-right: 50px;
+            /*border: 1px dotted black; For testing*/
+            float: right;
+        }
+
+        #RightBoard .container h1 {
+            display: flex;
+            margin-right: 0px; /* Add some space between the two headings */
+        }
+
+
+        .card {
+            width: 300px;
+            height: auto;
+            border: 1px solid rgb(65, 65, 65);
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        </style>
+    </head>
+        <body>
+            <div id="RightBoard">
+                <div class="container" style="display: flex;">
+                  <a href = "WebDev_Website_Home.html" style="text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">Home</a>
+                  <a href = "WebDev_Website_World.html" style="border: 1px solid black; border-radius: 5px; text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">World</a>
+                  <a href = "WebDev_Website_Sports.html" style="text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">Sports</a>
+                  <a href = "WebDev_Website_Science.html" style="text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">Science</a>
+                  <a href = "WebDev_Website_Extra.html" style="text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">Extra</a>
+                </div>
+              </div>
+              
+            <h1 style = "background-color: rgb(255, 255, 255); border-bottom: 4px solid rgb(0, 0, 0); padding-left: 30px; padding-bottom: 10px;">Buckingham World News</h1>
+            <body>
+                
+                <div class="card">
+                    <img src="Images\Paul.jpg" alt="Paul" />
+                    <h2>White Hart House Arrest</h2>
+                    <p>Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
+                </div>
+
+                <div class="card">
+                    <img src="Images/Allie the Alligator.jpg" alt="Image" />
+                    <h2>Alligators strikes local town</h2>
+                    <p>In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
+                </div>
+            </body>
+</html>
