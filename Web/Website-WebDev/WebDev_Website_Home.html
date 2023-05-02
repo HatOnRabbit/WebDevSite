@@ -24,45 +24,63 @@
             padding-top: 0px;
         }
 
-        .container {
-            width: 100%; /* Set the width of the container */
-            margin: 0 auto; /* Center the container horizontally */
-            padding: 5px; /* Add some padding to the container */
-            margin-right: 50px;
-            /*border: 1px dotted black; For testing*/
-            float: right;
-        }
+    .container {
+        width: 100%; /* Set the width of the container */
+        margin: 0 auto; /* Center the container horizontally */
+        padding: 5px; /* Add some padding to the container */
+        margin-right: 50px;
+        /*border: 1px dotted black; For testing*/
+        float: right;
+    }
 
         #RightBoard .container h1 {
             display: flex;
             margin-right: 0px; /* Add some space between the two headings */
         }
 
+    .card {
+        width: 300px;
+        height: auto;
+        border: 1px solid rgb(65, 65, 65);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        align-items: center;
+    }
 
-        .card {
-            width: 300px;
-            height: auto;
-            border: 1px solid rgb(65, 65, 65);
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px;
-            display: inline-block;
-            vertical-align: top;
-            box-sizing: border-box;
-            background-color: #f8f8f8;
-            border-radius: 10px;
-        }
-        .card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 10px 10px 0 0;
-        }
-        .card h2 {
-            margin-top: 0;
-            font-size: 20px;
-            font-weight: bold;
-        }
+    .card:hover {
+        width: 400px;
+        height: 400px;
+        align-items: center;
+    }
+
+    .card img, .card h2, .card p {
+        transform: scale(1);
+        transition: all 0.2s ease-in-out;
+    }
+
+    .card:hover img, .card:hover h2, .card:hover p {
+        transform: scale(1.1);
+    }
+
+    .card img {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    .card h2 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
 
         </style>
@@ -77,8 +95,7 @@
                   <a href = "WebDev_Website_Extra.html" style="text-decoration: none; font-size: 25px; color: black; margin-top: 0; margin-right: 25px;">Extra</a>
                 </div>
               </div>
-              
-            <h1 style = "background-color: rgb(255, 255, 255); border-bottom: 4px solid rgb(0, 0, 0); padding-left: 30px; padding-bottom: 10px;">Buckingham News</h1>
+            <h1 style = "border-bottom: 4px solid rgb(0, 0, 0); padding-left: 30px; padding-bottom: 10px;">Buckingham News</h1>
             <body>
                 <div style="background-color: rgba(255, 255, 0, 0.404); height: 50px; margin:0; padding:0; border-bottom: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0);">
                     <marquee style="margin:0; padding:0; line-height: 50px" behavior="scroll" direction="left" scrollamount="10" onend="updateMarquee()">
@@ -86,16 +103,33 @@
                     </marquee>
                 </div>
                 
-                <div class="card">
-                    <img src="Images\Paul.jpg" alt="Paul" />
-                    <h2>White Hart House Arrest</h2>
-                    <p>Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
-                </div>
+                <h1 style = "background-color: rgb(255, 255, 255); border-bottom: 4px solid rgb(0, 0, 0); padding-left: 30px; padding-bottom: 0px; margin-bottom: 0px;">Stories</h1>
 
-                <div class="card">
-                    <img src="Images/Allie the Alligator.jpg" alt="Image" />
-                    <h2>Alligators strikes local town</h2>
-                    <p>In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
+                <div style = "border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 40px; margin-right: 40px;">
+                    <div class="card">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="margin-bottom: 10px;" src="Images\Paul.jpg" alt="Paul" />
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <h2>White Hart House Arrest</h2>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <p>Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="margin-bottom: 10px;" src="Images/Allie the Alligator.jpg" alt="Paul" />
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <h2>Alligators strikes local town</h2>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <p>In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <script> //This is for the marquee text scroll being randomized
