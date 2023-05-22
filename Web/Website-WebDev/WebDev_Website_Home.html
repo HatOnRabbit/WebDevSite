@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <style>
             html, body, #page {
             height:100%;
@@ -209,6 +210,10 @@ button:hover{
     </head>
         <body>
 
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+            <!-- Half page HTML -->
+
             <div id="halfPage">
                 <!-- Content of the half-page goes here -->
                 <h1 id = "titleHolder" style="border-bottom: solid 5px rgb(0, 0, 120); border-top: solid 5px  rgb(0, 0, 120); height: 4rem; color:white; text-align: center; background-color: rgb(0, 0, 206); line-height: 4rem;">Story Title</h1>
@@ -244,6 +249,11 @@ button:hover{
 
             <h1 style="font-size: 50px; height: 3rem; border-bottom: 4px solid rgb(0, 0, 0); background: linear-gradient(to bottom, #009ac9, #007bff); padding-left: 30px; padding-bottom: 10px; margin-top: 0; text-shadow: -1px -1px 4px #ffb765;">Buckingham News</h1>
 
+            <!-- Weather -->
+
+            <div style = "width: 100%;" onload="Weather()">
+                <h1 id = "weather" style = "color:white; text-align: center;">Weather</h1>
+            </div>
 
             <body>
                 <div style="background-color: rgb(255, 255, 0); height: 50px; margin:0; padding:0; border-bottom: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0);">
@@ -291,10 +301,22 @@ button:hover{
                         </div>
                     </div>
 
+                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="margin-bottom: 10px;" src="Images\AI_Image.png" alt="AI" />
+                        </div>
+                        <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <h2 id = "title #2">The Perils of AI-Generated News Articles: When the Machine Takes Over</h2>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <p id = "story #2">In an age dominated by rapid advancements in Artificial Intelligence (AI)</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <script> //This is for the marquee text scroll being randomized
-                    var phrases = ["Brexit wasn't enough, Buckingham should be separate from UK", "Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'", "'Man fixes Twisted Chimney's chimney with braces'"];
+                <script>
+                    var phrases = ["Brexit wasn't enough, Buckingham should be separate from UK -says man", "Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'", "'Man fixes Twisted Chimney's chimney with braces'"];
                     var currentPhraseIndex = Math.floor(Math.random() * phrases.length);
                     document.getElementById("marquee").innerHTML = phrases[currentPhraseIndex];
             
@@ -318,13 +340,13 @@ button:hover{
                     }
 
                     function WriteToHalfPage(number) { //Writes the stories into the half page
-                        //console.log("story #" + number);
 
                         // Stories:
                         var stories = [
                             "Local man was forced to live in White Hart after he posted Yelp review saying that 'he didn't fancy the living conditions of the establishment'. This sparked out rage as the community have locked him inside and forced him to stay longer unitl he writes a better review.",
                             "In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.",
-                            "The first thing you should never say to a computing student is; Number one: Can you fix my computer? It's making a weird noise, like 'beep boop'! Number two: You're a computer science student? So, you must know how to hack into anyone's Facebook, right? Number three: Oh, you're studying programming? Can you write a program that will do all my assignments for me? Number four: Computers are so easy, even my grandma can use them. What's the big deal? Number five: Why are you studying computer science? Aren't robots going to take over the world and steal your job? Number six: I have this great idea for an app. I'll tell you the concept, and you can do all the coding for me, deal? Number seven: Computing is just typing, right? Anyone can type! Number eight: I heard you're studying algorithms. Can you solve this math problem for me? It's been bugging me for days. Number nine: I bet you spend all your time playing video games instead of studying. Number ten: Computing is so boring. I don't know how you can enjoy it."
+                            "The first thing you should never say to a computing student is; Number one: Can you fix my computer? It's making a weird noise, like 'beep boop'! Number two: You're a computer science student? So, you must know how to hack into anyone's Facebook, right? Number three: Oh, you're studying programming? Can you write a program that will do all my assignments for me? Number four: Computers are so easy, even my grandma can use them. What's the big deal? Number five: Why are you studying computer science? Aren't robots going to take over the world and steal your job? Number six: I have this great idea for an app. I'll tell you the concept, and you can do all the coding for me, deal? Number seven: Computing is just typing, right? Anyone can type! Number eight: I heard you're studying algorithms. Can you solve this math problem for me? It's been bugging me for days. Number nine: I bet you spend all your time playing video games instead of studying. Number ten: Computing is so boring. I don't know how you can enjoy it.",
+                            "In an age dominated by rapid advancements in Artificial Intelligence (AI), the notion of AI-generated news articles may appear tempting. However, we must approach the idea of complete automation in news writing with caution. While AI technology has demonstrated its potential in automating certain tasks, allowing AI to solely write news articles can have profound and alarming implications for society at large. This article unearths some compelling reasons why the unfettered reliance on AI in news reporting can lead to detrimental outcomes. The Erosion of Authenticity and Human Perspective: A cornerstone of news reporting lies in the human touch. Journalists bring their lived experiences, unique perspectives, and ethical standards to their work. Regrettably, AI lacks the intrinsic ability to truly comprehend and convey the depth of human emotions and perspectives crucial for engrossing storytelling. Consequently, news articles generated by AI risk becoming sterile and disconnected, failing to forge an empathetic bond with readers. Ethical Quandaries and Bias Amplification: AI systems learn from existing data, which can inadvertently perpetuate biases present in the training data. Should AI algorithms assume the role of news writers, there exists an inherent danger of biased reporting or unintentional reinforcement of stereotypes. This poses ethical concerns as it could fuel misinformation, deepen societal divisions, and undermine the very foundations of objective journalism. Limited Contextual Understanding and Analysis: News articles often require a comprehensive understanding of complex situations, nuanced analysis, and contextual knowledge. While AI algorithms excel in processing vast amounts of information, they struggle to grasp the intricate web of interconnected events, historical context, and sociopolitical nuances that shape news stories. Relying solely on AI-generated articles risks oversimplification, leading to a loss of depth and accuracy in reporting. Impersonal and Detached Reporting: AI-generated news articles lack the ability to provide a human touch, leaving readers with an impersonal and detached experience. News stories require empathy, compassion, and an innate understanding of the human condition to resonate with audiences. By relinquishing the human element, AI-written articles fail to capture the essence of human stories and deprive readers of the emotional connection that quality journalism fosters. Impact on Journalism Profession and Job Losses: The automation of news writing threatens the livelihoods of journalists. AI-generated articles could potentially replace human journalists, leading to significant job losses in the industry. This not only disrupts the profession but also jeopardizes the invaluable role that journalists play in holding power accountable, uncovering hidden truths, and serving as the voice of the people.While AI has made significant strides in various fields, relegating news writing entirely to AI systems presents an array of dangers. From the erosion of authenticity and human perspective to ethical dilemmas, the pitfalls are numerous. In an age where trusted journalism is more critical than ever, it is essential to preserve the human element in news reporting. Rather than replacing journalists, AI should be harnessed as a tool to augment their abilities, aiding in research, fact-checking, and data analysis. By embracing a collaborative approach, we can ensure that journalism remains a bastion of truth, integrity, and human connection in the face of technological advancements."
                         ];
 
                         //console.log(stories[number]);
@@ -332,6 +354,42 @@ button:hover{
                         var paragraphTarget = document.getElementById("storyHolder"); // This is the storyHolder
                         paragraphTarget.textContent = stories[number];
                     }
+                    </script>
+                <script>
+                    window.onload = function () {
+                    // Replace 'YOUR_API_KEY' with the API key obtained from OpenWeatherMap
+                    const apiKey = '7aa2af53dfb50efa5c75596671fd8b1b';
+
+                    // Define the latitude and longitude coordinates for the location
+                    const latitude = 51.9995;
+                    const longitude = -0.9864;
+
+                    // Define the URL for the current weather API endpoint
+                    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+                    console.log(apiUrl);
+
+                    // Make an HTTP GET request to the API endpoint using axios
+                    axios.get(apiUrl)
+                        .then(response => {
+                        // Extract the relevant weather data from the API response
+                        const weatherData = response.data.weather[0];
+                        const temperatureInKelvin = response.data.main.temp;
+                        const temperatureInFahrenheit = Math.floor((temperatureInKelvin - 273.15) * 9/5 + 32);
+                        const city = response.data.name;
+
+                        // Display the weather report using console.log or update your HTML
+                        console.log(`Weather in ${city}: ${weatherData.description}`);
+                        console.log(`Temperature: ${temperatureInFahrenheit}°F`);
+
+                        // Update the h1 element with the temperature
+                        const weatherElement = document.getElementById('weather');
+                        weatherElement.textContent = ` ${temperatureInFahrenheit}°F, ${weatherData.description} in ${city}`;
+                        })
+                        .catch(error => {
+                        console.log('Error fetching weather data:', error);
+                        });
+                    };
                 </script>
             </body>
 </html>

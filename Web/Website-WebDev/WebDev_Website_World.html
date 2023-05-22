@@ -159,9 +159,65 @@
     animation: move_wave 30s linear infinite;
 }
     
+#halfPage {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background: linear-gradient(to bottom, #1e00c9, #8c00ff);
+        transition: transform 0.3s ease;
+        transform: translateX(100%);
+        overflow-y: auto;
+        z-index: 9999;
+    }
+    
+    #halfPage::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #halfPage.open {
+      transform: translateX(0%);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+button{
+  padding: 10px 30px;
+  background-color: #050801;
+  color: #03e9f4;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+button:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+    
         </style>
     </head>
         <body>
+
+            <div id="halfPage">
+                <!-- Content of the half-page goes here -->
+                <h1 id = "titleHolder" style="border-bottom: solid 5px rgb(0, 0, 120); border-top: solid 5px  rgb(0, 0, 120); height: 4rem; color:white; text-align: center; background-color: rgb(0, 0, 206); line-height: 4rem;">Story Title</h1>
+                <p id="storyHolder" style="color: white; text-align: left; padding: 3rem; font-size: 25px; text-indent: 2rem; line-height: 1.5;">This is where the story goes</p>
+                <div style="display: flex; justify-content: center;">
+                    <button style = "font-size: 1rem; margin-bottom: 30px;" onclick="ToggleHalfPage()">Close</button>
+                </div>
+                  
+              </div>
 
             <div class="waveWrapper waveAnimation">
                 <div class="waveWrapperInner bgTop">
@@ -180,7 +236,7 @@
                     <a href="WebDev_Website_Home.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Home</a>
                     <a style="border: 3px solid black; border-radius: 5px; text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px; background-color: #74747462;">World</a>
                     <a href="WebDev_Website_Sports.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Sports</a>
-                    <a href="WebDev_Website_Science.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Science</a>
+                    <a href="WebDev_Website_World.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Science</a>
                     <a href="WebDev_Website_Extra.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Extra</a>
                 </div>
             </div>
@@ -190,49 +246,78 @@
 
 
             <body>
-                <div style="background-color: rgb(255, 255, 0); height: 50px; margin:0; padding:0; border-bottom: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0);">
-                    <marquee style="margin:0; padding:0; line-height: 50px" behavior="scroll" direction="left" scrollamount="10" onend="updateMarquee()">
-                        <font size="+2"><b><span id="marquee"></span></b></font>
-                    </marquee>
-                </div>
                 
                 <h1 style = "text-shadow: -1px -1px 4px #ffb765; font-size: 35px; background: linear-gradient(to bottom, #009ac9, #007bff); border-bottom: 4px solid rgb(0, 0, 0); border-top: 4px solid rgb(0, 0, 0); padding-left: 50px; padding-bottom: 0px; margin-bottom: 0px;">Stories</h1>
 
                 <div style = "height: 80%; background: linear-gradient(to bottom, #00638173, #003b7977); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 40px; margin-right: 40px;">
-                    <div class="card">
+                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <img style="margin-bottom: 10px;" src="Images\Paul.jpg" alt="Paul" />
                         </div>
                         <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <h2>White Hart House Arrest</h2>
+                            <h2 id = "title #0">White Hart House Arrest</h2>
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <p>Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
+                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
                         </div>
                     </div>
     
-                    <div class="card" >
+                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
                         <div style="display: flex; justify-content: center; align-items: center;">
                             <img style="margin-bottom: 10px;" src="Images/Allie the Alligator.jpg" alt="Paul" />
                         </div>
                         <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <h2>Alligators strikes local town</h2>
+                            <h2 id = "title #1">Alligators strike in local town</h2>
                         </div>
                         <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <p>In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
+                            <p id = "story #1">In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <img style="margin-bottom: 10px;" src="Images\Computing_Student.png" alt="Paul" />
+                        </div>
+                        <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+                            <p id = "story #2">Can you fix the internet for me?</p>
                         </div>
                     </div>
 
                 </div>
 
                 <script> //This is for the marquee text scroll being randomized
-                    var phrases = ["Brexit wasn't enough, Buckingham should be separate from UK", "Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'", "'Man fixes Twisted Chimney's chimney with braces'"];
-                    var currentPhraseIndex = Math.floor(Math.random() * phrases.length);
-                    document.getElementById("marquee").innerHTML = phrases[currentPhraseIndex];
-            
-                    function updateMarquee() {
-                        currentPhraseIndex = Math.floor(Math.random() * phrases.length);
-                        document.getElementById("marquee").innerHTML = phrases[currentPhraseIndex];
+
+                    function ToggleHalfPage() { //This opens & closes half page
+                        //console.log("Testing");
+                        var halfPage = document.getElementById("halfPage");
+                        halfPage.classList.toggle("open");
+                    }
+
+                    function WriteToHalfPageTitle(number) { //Writes the story's title into the half page
+                        //console.log("story #" + number);
+
+                        var paragraphSubject = document.getElementById("title #" + number);
+                        var paragraphTarget = document.getElementById("titleHolder");
+                        paragraphTarget.textContent = paragraphSubject.textContent;
+                    }
+
+                    function WriteToHalfPage(number) { //Writes the stories into the half page
+                        //console.log("story #" + number);
+
+                        // Stories:
+                        var stories = [
+                            "Local man was forced to live in White Hart after he posted Yelp review saying that 'he didn't fancy the living conditions of the establishment'. This sparked out rage as the community have locked him inside and forced him to stay longer unitl he writes a better review.",
+                            "In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.",
+                            "The first thing you should never say to a computing student is; Number one: Can you fix my computer? It's making a weird noise, like 'beep boop'! Number two: You're a computer science student? So, you must know how to hack into anyone's Facebook, right? Number three: Oh, you're studying programming? Can you write a program that will do all my assignments for me? Number four: Computers are so easy, even my grandma can use them. What's the big deal? Number five: Why are you studying computer science? Aren't robots going to take over the world and steal your job? Number six: I have this great idea for an app. I'll tell you the concept, and you can do all the coding for me, deal? Number seven: Computing is just typing, right? Anyone can type! Number eight: I heard you're studying algorithms. Can you solve this math problem for me? It's been bugging me for days. Number nine: I bet you spend all your time playing video games instead of studying. Number ten: Computing is so boring. I don't know how you can enjoy it."
+                        ];
+
+                        //console.log(stories[number]);
+
+                        var paragraphTarget = document.getElementById("storyHolder"); // This is the storyHolder
+                        paragraphTarget.textContent = stories[number];
                     }
                 </script>
             </body>
