@@ -6,8 +6,9 @@
             html, body, #page {
             height:100%;
             width:100%;
-            margin:0;
-            padding:0;
+            margin: 0px;
+            margin-top: -10px;
+            padding: 0px;
         }
         body::-webkit-scrollbar{
             display: none;
@@ -100,80 +101,81 @@
     }
     100% {
         transform: translateX(-50%) translateZ(0) scaleY(1)
+        }
     }
-}
-.waveWrapper {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: -1;
-    margin: auto;
-}
-.waveWrapperInner {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    bottom: -1px;
-    z-index: -1;
-    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
-}
-.bgTop {
-    z-index: -1;
-    opacity: 0.5;
-}
-.bgMiddle {
-    z-index: 10;
-    opacity: 0.75;
-}
-.bgBottom {
-    z-index: 5;
-}
-.wave {
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-    transform-origin: center bottom;
-}
-.waveTop {
-    background-size: 50% 100px;
-}
-.waveAnimation .waveTop {
-  animation: move-wave 3s;
-   -webkit-animation: move-wave 3s;
-   -webkit-animation-delay: 1s;
-   animation-delay: 1s;
-}
-.waveMiddle {
-    background-size: 50% 120px;
-}
-.waveAnimation .waveMiddle {
-    animation: move_wave 55s linear infinite;
-}
-.waveBottom {
-    background-size: 50% 100px;
-}
-.waveAnimation .waveBottom {
-    animation: move_wave 30s linear infinite;
-}
-    
-#halfPage {
-        position: fixed;
-        top: 0;
+
+    .waveWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
         right: 0;
         bottom: 0;
-        width: 50%;
-        background: linear-gradient(to bottom, #1e00c9, #8c00ff);
-        transition: transform 0.3s ease;
-        transform: translateX(100%);
-        overflow-y: auto;
-        z-index: 9999;
+        top: 0;
+        z-index: -1;
+        margin: auto;
+    }
+    .waveWrapperInner {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+        bottom: -1px;
+        z-index: -1;
+        background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+    }
+    .bgTop {
+        z-index: -1;
+        opacity: 0.5;
+    }
+    .bgMiddle {
+        z-index: 10;
+        opacity: 0.75;
+    }
+    .bgBottom {
+        z-index: 5;
+    }
+    .wave {
+        position: absolute;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+    }
+    .waveTop {
+        background-size: 50% 100px;
+    }
+    .waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    }
+    .waveMiddle {
+        background-size: 50% 120px;
+    }
+    .waveAnimation .waveMiddle {
+        animation: move_wave 55s linear infinite;
+    }
+    .waveBottom {
+        background-size: 50% 100px;
+    }
+    .waveAnimation .waveBottom {
+        animation: move_wave 30s linear infinite;
+    }
+        
+    #halfPage {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            background: linear-gradient(to bottom, #1e00c9, #8c00ff);
+            transition: transform 0.3s ease;
+            transform: translateX(100%);
+            overflow-y: auto;
+            z-index: 9999;
     }
     
     #halfPage::-webkit-scrollbar {
@@ -181,33 +183,33 @@
     }
     
     #halfPage.open {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-button{
-  padding: 10px 30px;
-  background-color: #050801;
-  color: #03e9f4;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  letter-spacing: 4px;
-  overflow: hidden;
-  transition: 0.5s;
-  cursor: pointer;
-}
+    button{
+        padding: 10px 30px;
+        background-color: #050801;
+        color: #03e9f4;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        letter-spacing: 4px;
+        overflow: hidden;
+        transition: 0.5s;
+        cursor: pointer;
+    }
 
-button:hover{
-    background: #03e9f4;
-    color: #050801;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 200px #03e9f4;
-     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
-}
+    button:hover{
+        background: #03e9f4;
+        color: #050801;
+        box-shadow: 0 0 5px #03e9f4,
+                    0 0 25px #03e9f4,
+                    0 0 50px #03e9f4,
+                    0 0 200px #03e9f4;
+        -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+    }
     
         </style>
     </head>
@@ -239,18 +241,21 @@ button:hover{
                 </div>
               </div>
 
-              <div id="RightBoard" style="display: flex; justify-content: center; align-items: center; margin-top: 7px;">
-                <div class="container">
-                    <a style="border: 3px solid black; border-radius: 5px; text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px; background-color: #74747462;">Home</a>
-                    <a href="WebDev_Website_World.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">World</a>
-                    <a href="WebDev_Website_Sports.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Sports</a>
-                    <a href="WebDev_Website_Science.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Science</a>
-                    <a href="WebDev_Website_Extra.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Extra</a>
-                </div>
-            </div>
-            
 
-            <h1 style="font-size: 50px; height: 3rem; border-bottom: 4px solid rgb(0, 0, 0); background: linear-gradient(to bottom, #009ac9, #007bff); padding-left: 30px; padding-bottom: 10px; margin-top: 0; text-shadow: -1px -1px 4px #ffb765;">Buckingham News</h1>
+              <!-- This is for the header -->
+              <div id="RightBoard" style="padding-bottom: 10px; margin-bottom: 10px; display: flex; justify-content: center; align-items: center; height: 3rem; border-bottom: 4px solid rgb(0, 0, 0); background: linear-gradient(to bottom, #009ac9, #007bff); width: 100%;">
+                <div style="width: 300px; height: 3rem;"> <!-- This is for the title -->
+                    <h1 style="font-size: 50px; padding-left: 30px; padding-bottom: 10px; margin-top: 0; text-shadow: -1px -1px 4px #ffb765; white-space: nowrap;">Buckingham News</h1>
+                </div>
+              
+                <div class="container" style="display: flex; justify-content: flex-end;">
+                  <a style="border: 3px solid black; border-radius: 5px; text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px; background-color: #74747462;">Home</a>
+                  <a href="WebDev_Website_World.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">World</a>
+                  <a href="WebDev_Website_Sports.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Sports</a>
+                  <a href="WebDev_Website_Science.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Science</a>
+                  <a href="WebDev_Website_Extra.html" style="text-decoration: none; font-size: 30px; color: black; margin-top: 0; margin-right: 25px;">Extra</a>
+                </div>
+              </div>
 
             <!-- Weather -->
 
@@ -394,6 +399,30 @@ button:hover{
                         var paragraphTarget = document.getElementById("storyHolder"); // This is the storyHolder
                         paragraphTarget.textContent = stories[number];
                     }
+
+                    var fileUrls = [ //Working on makin it so we can make our own ads
+                        'Ads/Ad_1.html',
+                    ];
+
+                    function openRandomPopup() {
+                        var randomIndex = Math.floor(Math.random() * fileUrls.length);
+                        var randomFileUrl = fileUrls[randomIndex];
+                        
+                        var width = 600;
+                        var height = 400;
+
+                        var screenWidth = screen.width;
+                        var screenHeight = screen.height;
+
+                        var randomLeft = Math.floor(Math.random() * (screenWidth - width));
+                        var randomTop = Math.floor(Math.random() * (screenHeight - height));
+
+                        var popupWindow = window.open(randomFileUrl, '_blank', 'width=' + width + ', height=' + height + ', left=' + randomLeft + ', top=' + randomTop);
+                    }
+
+                    // Call the function after a random delay
+                    var randomDelay = Math.floor(Math.random() * 5000) + 1000; // time / 1k = time in seconds
+                    setTimeout(openRandomPopup, randomDelay);
                     </script>
                 <script>
                     window.onload = function () {
@@ -432,5 +461,5 @@ button:hover{
                         });
                     };
                 </script>
-            </body>
+        </body>
 </html>
