@@ -42,8 +42,26 @@
                   <a href="WebDev_Website_Sports.html">Sports</a>
                   <a href="WebDev_Website_Science.html">Science</a>
                   <a href="WebDev_Website_Extra.html">Extra</a>
+                  <button onclick="openLogin()">Sign In</button>
                 </div>
               </div>
+
+            <!--login-->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <h2>Login</h2>
+                    <label><b>Username</b></label>
+                    <input style="width:90%;padding: 10px 5%;" type="text" placeholder="Enter Username" required>
+                    <label><b>password</b></label>
+                    <input style="width:90%;padding: 10px 5%;" type="password" placeholder="Enter password" required>
+                    <button style="width:100%;padding: 10px 5%;">login</button>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    <div>
+                        <button onclick="closeLogin()">close</button>
+                    </div>
+                   
+                </div>
+            </div>
 
             <!-- Weather -->
 
