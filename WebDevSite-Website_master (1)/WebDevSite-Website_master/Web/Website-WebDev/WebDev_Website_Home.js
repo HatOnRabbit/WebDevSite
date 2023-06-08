@@ -69,6 +69,15 @@ function openRandomPopup() {
     var popupWindow = window.open(randomFileUrl, '_blank', 'width=' + width + ', height=' + height + ', left=' + randomLeft + ', top=' + randomTop);
 }
 
+//function to open login Popup
+function openLogin(){
+    document.getElementById("modal").style.display="block";
+}
+
+function closeLogin(){
+    document.getElementById("modal").style.display="none";
+}
+
 // Call the function after a random delay
 var randomDelay = Math.floor(Math.random() * 5000) + 1000; // time / 1k = time in seconds
 setTimeout(openRandomPopup, randomDelay);
