@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Report</title>
+  <!-- Add the Axios library -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1>Weather Report</h1>
+
+  <!-- Your HTML content -->
+
+  <script>
+    // Your JavaScript code that uses Axios
+    // You can use axios directly here without the require statement
+
+    // Replace 'YOUR_API_KEY' with the API key obtained from OpenWeatherMap
+    const apiKey = '7aa2af53dfb50efa5c75596671fd8b1b';
+
+    // Define the latitude and longitude coordinates for the location
+    const latitude = 51.9995;
+    const longitude = -0.9864;
+
+    // Define the URL for the current weather API endpoint
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    console.log(apiUrl);
+
+    // Make an HTTP GET request to the API endpoint using axios
+    axios.get(apiUrl)
+      .then(response => {
+        // Extract the relevant weather data from the API response
+        const weatherData = response.data.weather[0];
+        const temperatureInKelvin = response.data.main.temp;
+        const temperatureInFahrenheit = (temperatureInKelvin - 273.15) * 9/5 + 32;
+        const city = response.data.name;
+
+        // Display the weather report using console.log or update your HTML
+        console.log(`Weather in ${city}: ${weatherData.description}`);
+        console.log(`Temperature: ${temperatureInFahrenheit}°F`);
+
+        // You can update your HTML with the weather data as well
+        const weatherElement = document.createElement('p');
+        weatherElement.textContent = `Weather in ${city}: ${weatherData.description}`;
+        document.body.appendChild(weatherElement);
+
+        const temperatureElement = document.createElement('p');
+        temperatureElement.textContent = `Temperature: ${temperatureInFahrenheit}°F`;
+        document.body.appendChild(temperatureElement);
+      })
+      .catch(error => {
+        console.log('Error fetching weather data:', error);
+      });
+  </script>
+</body>
+</html>
