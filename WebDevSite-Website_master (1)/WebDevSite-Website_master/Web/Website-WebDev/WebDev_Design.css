@@ -45,9 +45,13 @@ body::-webkit-scrollbar{
     background: linear-gradient(to bottom, #009ac9, #007bff);
     overflow: hidden;
     padding: 10px;
-   
-    
     margin-top: 20px;
+}
+
+.navBar-2{
+    background: linear-gradient(to bottom, #009ac9, #007bff);
+    overflow: hidden;
+    padding: 10px;
 }
 
 .navBar a{
@@ -58,12 +62,34 @@ body::-webkit-scrollbar{
     margin-right: 25px;
 }
 
-.navBar a:hover{
-    background-color: #ddd;
+.navBar-2 a{
+    text-decoration: none;
+    font-size: 30px;
     color: black;
+    margin-top: 0;
+    margin-right: 25px;
+}
+
+.navBar a:hover{
+    color: rgb(83, 83, 83);
+}
+
+.navBar-2 a:hover{
+    color: rgb(83, 83, 83);
 }
 
 .navBar a.active{
+    border: 3px solid black; 
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    margin-top: 0;
+    margin-right: 25px;
+    background-color: #74747462;
+}
+
+.navBar-2 a.active{
     border: 3px solid black; 
     border-radius: 5px;
     text-decoration: none;
@@ -87,6 +113,19 @@ body::-webkit-scrollbar{
     white-space: nowrap;
 }
 
+.navBar-2 h1{
+    width: 300px; 
+    height: 3rem;
+    float: left;
+    position:absolute; 
+    font-size: 50px;
+    padding-left: 30px; 
+    padding-bottom: 10px; 
+    margin-top: -10px;
+    text-shadow: -1px -1px 4px #ffb765; 
+    white-space: nowrap;
+}
+
 @media screen and (max-width: 1000px) {
     .navBar {
       padding-bottom: 60px !important;
@@ -97,6 +136,16 @@ body::-webkit-scrollbar{
       top: 40px;
       left: 25px;
     }
+
+    .navBar-2 {
+        padding-bottom: 60px !important;
+      }
+      .navBar-2 a {
+        float: none;
+        position:relative;
+        top: 40px;
+        left: 25px;
+      }
 }
 
 .card {

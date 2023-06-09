@@ -1,4 +1,4 @@
-//List of silly
+// List of silly
 var phrases = ["'Brexit wasn't enough, Buckingham should be separate from UK' -says angry man",
 "Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'",
 "'Man fixes Twisted Chimney's chimney with braces'",
@@ -111,7 +111,7 @@ axios.get(apiUrl)
 
     //Change the tempature
     const weatherElement = document.getElementById('weather');
-    weatherElement.textContent = ` ${temperatureInFahrenheit}°F, ${weatherData.description} in ${city}, ` + response.data.main.humidity + "% wet air";
+    weatherElement.textContent = ` ${temperatureInFahrenheit}\u00B0F, ${weatherData.description} in ${city}, ` + response.data.main.humidity + "% wet air";
     })
     .catch(error => {
     console.log('Error fetching weather data:', error);
