@@ -11,7 +11,7 @@
 
     </head>
         <body>
-
+            <div class="Desktop">
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
             <!-- Half page HTML -->
@@ -78,61 +78,122 @@
                     </marquee>
                 </div>
                 
-                <h1 style = "border-top: 1px solid black; border-bottom: 1px solid black; color: white; text-shadow: -1px -1px 4px #301934; font-size: 35px; background: #A020F0; margin-right: 16%; width: 100%; padding-left: 16%; margin-top: 30px;">Stories</h1>
+                <h1 style = "border-top: 1px solid black; border-bottom: 1px solid black; color: white; text-shadow: -1px -1px 4px #301934; font-size: 35px; background: #A020F0; margin-right: 16%; width: 100%; padding-left: 16%; margin-top: 30px;">Current Top Sports</h1>
                 
-                <div  style = "height: 100rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
+                <div  style = "height: 60rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
                     <!--Bootstrap Table for cards-->
-                <div class="container-fluid" >
-                    <div class="row">
-                        <div class="cardBig" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
-                            <img src="Images\Paul.jpg"/>
-                            <h2 id = "title #0">White Hart House Arrest</h2>
-                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
-                        </div>
-                        <div>
-                            <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
-                                    <img src="Images/Allie the Alligator.jpg"/>
-                                    <h2 id = "title #1">Alligators strike in local town</h2>
-                                    <p id = "story #1">The local Alligator population has overun the town center</p>
-                                </div>
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class = "card" style = "display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;">
+                                <img width="250" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg">
+                                <a style = "text-align: center; padding-top: 5px;" href = "https://en.wikipedia.org/wiki/Swimming">1.Swimming</a>
+                             </div>
+                            <div class = "card" style = "display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;">
+                                 <img width="250" src="https://www.thefactsite.com/wp-content/uploads/2009/06/skydiving-ironing.webp">
+                                 <a style = "text-align: center; padding-top: 5px;" href = "https://en.wikipedia.org/wiki/Extreme_ironing">2.Extreme Ironing</a>
                             </div>
-                            <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
-                                    <img src="Images\Computing_Student.png"/>
-                                    <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
-                                    <p id = "story #2">You will not believe number 10!</p>
-
-                                </div>
+             
+                            <div class = "card" style = "display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;">
+                                <img width="250" src="https://www.shutterstock.com/image-photo/businessman-looking-through-binocular-over-260nw-143569180.jpg">
+                                <a style = "text-align: center; padding-top: 5px;" href = "https://www.imdb.com/title/tt1948830/">3.Bigfoot</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class = "card" style = "display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;">
+                                <img width="250" src="https://i.guim.co.uk/img/media/aa40e0e942b410f5993b5621ef5bfcbcef7b0d8a/0_0_4410_2646/master/4410.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=197ec8980bf6ea2b7ee97bca9f7147d2">
+                                <a style = "text-align: center; padding-top: 5px;" href = "https://en.wikipedia.org/wiki/Pigeon_racing">4.Pigeon Racing</a>
+                            </div>
+                            <div class = "card" style = "display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;">
+                                <img width="250" src="https://golf.com/wp-content/uploads/2023/06/Tyrrell-Hatton-1024x576.jpg?width=834&height=469">
+                                <a style = "text-align: center; padding-top: 5px;" href = "https://en.wikipedia.org/wiki/Golf">5.Golf</a>
+                            </div>
+                            <div class = "card" style = "display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;">
+                                <img width="250" src="https://xampion.com/wp-content/uploads/2019/08/Improve-your-weak-foot-football-best-football-tracking-system-Xampion.com-in-the-field.jpg">
+                                <a style = "text-align: center; padding-top: 5px;" href = "https://en.wikipedia.org/wiki/Football">6.football</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
-                            <img src="Images\AI_Image.png" alt="AI" />
-                            <h2 id = "title #3">The Perils of AI-Generated News Articles</h2>
-                            <p id = "story #3">In an age dominated by rapid advancements in Artificial Intelligence (AI)</p>
-                        </div>
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
-                            <img src="Images\Map.png" alt="Map" />
-                            <h2 id = "title #4">Map Burners get lost</h2>
-                            <p id = "story #4">Climate Change activists get lost after burning all of Buckingham's supply of maps</p>
-                        </div>
-                            
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(5); WriteToHalfPageTitle(5);">
-                            <img src="Images\GS_Cookie.jpg" alt="Girl Scouts" />
-                            <h2 id = "title #5">Girl Scouts Getting Aggressive</h2>
-                            <p id = "story #5">Girl Scouts arming themselves to the teeth admist local cookies sales decrease</p>
-                        </div>
-                    </div>
-              
-
                 </div>
-                </div>
-
+            </div>
                 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="WebDev_Website_Home.js"></script>
+                <div class="Mobile">
+                    <div class="navBarMobile">
+                        <h1 style="text-align:left;font-size: x-large;">Buckingham Sports News</h1>
+                        <div>
+                            <a href="WebDev_Website_Home.html">Home</a>
+                            <a href="WebDev_Website_World.html">World</a>
+                            <a class="active">Sports</a>
+                            <a href="WebDev_Website_Science.html">Science</a>
+                            <a href="WebDev_Website_Extra.html">Extra</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background-color: white;margin-left: 5%;margin-right: 5%;text-align: center;padding-top: 30%;padding-bottom: 15%;align-content: center;">
+                        <div class="container-fluid ">
+                            <div class="row">
+                                <div class="card">
+                                    <p>1.Swimming</p>
+                                    <img width="250" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/40._Schwimmzonen-_und_Mastersmeeting_Enns_2017_100m_Brust_Herren_USC_Traun-9897.jpg">
+                                 </div>
+                                <div class="card">
+                                     <p>2.Extreme Ironing</p>
+                                     <img width="250" src="https://www.thefactsite.com/wp-content/uploads/2009/06/skydiving-ironing.webp">
+                                </div>
+                 
+                                <div class="card">
+                                    <p>3.Bigfoot finding</p>
+                                    <img width="250" src="https://www.shutterstock.com/image-photo/businessman-looking-through-binocular-over-260nw-143569180.jpg">
+                            
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card">
+                                    <p>4.pigeon racing</p>
+                                    <img width="250" src="https://i.guim.co.uk/img/media/aa40e0e942b410f5993b5621ef5bfcbcef7b0d8a/0_0_4410_2646/master/4410.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=197ec8980bf6ea2b7ee97bca9f7147d2">
+                                </div>
+                                <div class="card">
+                                    <p>5.golf</p>
+                                    <img width="250" src="https://golf.com/wp-content/uploads/2023/06/Tyrrell-Hatton-1024x576.jpg?width=834&height=469">
+                                </div>
+                                <div class="card">
+                                    <p>6.football</p>
+                                    <img width="250" src="https://xampion.com/wp-content/uploads/2019/08/Improve-your-weak-foot-football-best-football-tracking-system-Xampion.com-in-the-field.jpg">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
+
+                    <footer class="footerMobile">
+                        <p>Download App to get full features</p>
+                    </footer>
+                </div>
         </body>
 </html>

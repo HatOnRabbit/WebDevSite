@@ -11,7 +11,7 @@
 
     </head>
         <body>
-
+            <div class="Desktop">
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
             <!-- Half page HTML -->
@@ -84,45 +84,45 @@
                     <!--Bootstrap Table for cards-->
                 <div class="container-fluid" >
                     <div class="row">
-                        <div class="cardBig" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
-                            <img src="Images\Paul.jpg"/>
-                            <h2 id = "title #0">White Hart House Arrest</h2>
-                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
+                        <div class="cardBig" onclick="ToggleHalfPage(); WriteToHalfPage(11); WriteToHalfPageTitle(11);">
+                            <img src="Images\Sayings.png"/>
+                            <h2 id = "title #11">Popular sayings and their origins</h2>
+                            <p id = "story #11">'Two feet of a left goose', 'sprig of a winter's broccoli', 'Simple as backgammon', origins and more</p>
                         </div>
                         <div>
                             <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
-                                    <img src="Images/Allie the Alligator.jpg"/>
-                                    <h2 id = "title #1">Alligators strike in local town</h2>
-                                    <p id = "story #1">The local Alligator population has overun the town center</p>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(12); WriteToHalfPageTitle(12);">
+                                    <img src="Images/Smoke.png" alt = "Smoke"/>
+                                    <h2 id = "title #12">Smoke signals making a comeback?</h2>
+                                    <p id = "story #12"></p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
-                                    <img src="Images\Computing_Student.png"/>
-                                    <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
-                                    <p id = "story #2">You will not believe number 10!</p>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(13); WriteToHalfPageTitle(13);">
+                                    <img src="Images\Scissors.png" alt = "Scissors"/>
+                                    <h2 id = "title #13">Ranking scissors by safety</h2>
+                                    <p id = "story #13">Number 3 will blow your mind!</p>
 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
-                            <img src="Images\AI_Image.png" alt="AI" />
-                            <h2 id = "title #3">The Perils of AI-Generated News Articles</h2>
-                            <p id = "story #3">In an age dominated by rapid advancements in Artificial Intelligence (AI)</p>
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(14); WriteToHalfPageTitle(14);">
+                            <img src="Images\Monster.png" alt="Monster" />
+                            <h2 id = "title #14">Students enraged after finding out whats in monster</h2>
+                            <p id = "story #14"></p>
                         </div>
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
-                            <img src="Images\Map.png" alt="Map" />
-                            <h2 id = "title #4">Map Burners get lost</h2>
-                            <p id = "story #4">Climate Change activists get lost after burning all of Buckingham's supply of maps</p>
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(15); WriteToHalfPageTitle(15);">
+                            <img src="Images\Lying.png" alt="Lying" />
+                            <h2 id = "title #15">Is lying the new humor?</h2>
+                            <p id = "story #15"></p>
                         </div>
                             
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(5); WriteToHalfPageTitle(5);">
-                            <img src="Images\GS_Cookie.jpg" alt="Girl Scouts" />
-                            <h2 id = "title #5">Girl Scouts Getting Aggressive</h2>
-                            <p id = "story #5">Girl Scouts arming themselves to the teeth admist local cookies sales decrease</p>
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(16); WriteToHalfPageTitle(16);">
+                            <img src="Images\Chicken.png" alt="Chicken" />
+                            <h2 id = "title #16">Britan's new cooking pastime</h2>
+                            <p id = "story #16">Gordon Ramsay is angry at us</p>
                         </div>
                     </div>
               
@@ -133,6 +133,70 @@
                 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="WebDev_Website_Home.js"></script>
+                </div>
+                <div class="Mobile">
+                    <div class="navBarMobile">
+                        <h1 style="text-align:left;font-size: x-large;">Buckingham News</h1>
+                        <div>
+                            <a href="WebDev_Website_Home.html">Home</a>
+                            <a href="WebDev_Website_World.html">World</a>
+                            <a href="WebDev_Website_Sports.html">Sports</a>
+                            <a href="WebDev_Website_Science.html">Science</a>
+                            <a class="active"style="">Extra</a>
+                        </div>
+    
+                    </div>
+                    <div style="background-color: white;margin-left: 5%;margin-right: 5%;text-align: center;padding-top: 30%;padding-bottom: 15%;">
+                        <table> 
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
+                                    <img src="Images\Sayings.png"/>
+                                    <h2 id = "title #11">Popular sayings and their origins</h2>
+                                    <p id = "story #11">'Two feet of a left goose', 'sprig of a winter's broccoli', 'Simple as backgammon', origins and more</p>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
+                                    <img src="Images/Smoke.png" alt = "Smoke"/>
+                                    <h2 id = "title #12">Smoke signals making a comeback?</h2>
+                                    <p id = "story #12"></p>
+                                </div>                
+                            </tr>
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
+                                    <img src="Images\Scissors.png" alt = "Scissors"/>
+                                    <h2 id = "title #13">Ranking scissors by safety</h2>
+                                    <p id = "story #13">Number 3 will blow your mind!</p>                  
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
+                                    <img src="Images\Monster.png" alt="Monster" />
+                                    <h2 id = "title #14">Students enraged after finding out whats in monster</h2>
+                                    <p id = "story #14"></p>
+                                </div>          
+                            </tr>
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
+                                    <img src="Images\Lying.png" alt="Lying" />
+                                    <h2 id = "title #15">Is lying the new humor?</h2>
+                                    <p id = "story #15"></p>
+                                </div>      
+                            </tr>
+                            <tr>
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(5); WriteToHalfPageTitle(5);">
+                                    <img src="Images\Chicken.png" alt="Chicken" />
+                                    <h2 id = "title #16">Britan's new cooking pastime</h2>
+                                    <p id = "story #16">Gordon Ramsay is angry at us</p>
+                                </div>
+                            </tr>
+                        </table>
+    
+                    </div>
+                    <footer class="footerMobile">
+                        <p>Download App to get full features</p>
+                    </footer>
+                </div>
 
         </body>
 </html>

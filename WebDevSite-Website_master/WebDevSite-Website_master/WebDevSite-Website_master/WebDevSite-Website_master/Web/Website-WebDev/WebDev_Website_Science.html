@@ -11,6 +11,7 @@
 
     </head>
         <body>
+            <div class="Desktop">
 
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -82,57 +83,98 @@
                 
                 <div  style = "height: 100rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
                     <!--Bootstrap Table for cards-->
-                <div class="container-fluid" >
-                    <div class="row">
-                        <div class="cardBig" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
-                            <img src="Images\Paul.jpg"/>
-                            <h2 id = "title #0">White Hart House Arrest</h2>
-                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
-                        </div>
-                        <div>
-                            <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
-                                    <img src="Images/Allie the Alligator.jpg"/>
-                                    <h2 id = "title #1">Alligators strike in local town</h2>
-                                    <p id = "story #1">The local Alligator population has overun the town center</p>
-                                </div>
+    
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(6); WriteToHalfPageTitle(6);">
+                                <img src="Images\Cats.png"/>
+                                <h2 id = "title #6">What cats are trying to tell you</h2>
+                                <p id = "story #6">Of course its in their own words</p>
                             </div>
-                            <div class="row">
-                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
-                                    <img src="Images\Computing_Student.png"/>
-                                    <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
-                                    <p id = "story #2">You will not believe number 10!</p>
-
-                                </div>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(7); WriteToHalfPageTitle(7);">
+                                <img src="Images\Coin.png"/>
+                                <h2 id = "title #7">What is real the science behind coin flips</h2>
+                                <p id = "story #7">It'll change how you think about the world</p>
                             </div>
-                        </div>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(8); WriteToHalfPageTitle(8);">
+                                <img src="Images\Space.png"/>
+                                <h2 id = "title #8">Astrology vs Astronomy</h2>
+                                <p id = "story #8">Which can be trusted? Are they both out of this world?</p>
+                            </div>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(9); WriteToHalfPageTitle(9);">
+                                <img src="Images\Hampter.png"/>
+                                <h2 id = "title #9">Where does your electricity come from?</h2>
+                                <p id = "story #9"></p>
+                            </div>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(10); WriteToHalfPageTitle(10);">
+                                <img src="Images\Gas_Stove.png"/>
+                                <h2 id = "title #10">Gas stove? Seems solid to me</h2>
+                                <p id = "story #10">Another heated debate to be left on the back burner</p>
+                            </div>
                     </div>
-                    <div class="row">
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
-                            <img src="Images\AI_Image.png" alt="AI" />
-                            <h2 id = "title #3">The Perils of AI-Generated News Articles</h2>
-                            <p id = "story #3">In an age dominated by rapid advancements in Artificial Intelligence (AI)</p>
-                        </div>
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
-                            <img src="Images\Map.png" alt="Map" />
-                            <h2 id = "title #4">Map Burners get lost</h2>
-                            <p id = "story #4">Climate Change activists get lost after burning all of Buckingham's supply of maps</p>
-                        </div>
-                            
-                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(5); WriteToHalfPageTitle(5);">
-                            <img src="Images\GS_Cookie.jpg" alt="Girl Scouts" />
-                            <h2 id = "title #5">Girl Scouts Getting Aggressive</h2>
-                            <p id = "story #5">Girl Scouts arming themselves to the teeth admist local cookies sales decrease</p>
-                        </div>
-                    </div>
-              
+                </div>
 
-                </div>
-                </div>
 
                 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script src="WebDev_Website_Home.js"></script>
+            </div>
+        </div>
+            <div class="Mobile">
+                <div class="navBarMobile">
+                    <h1 style="text-align:left;font-size: x-large;">Buckingham News</h1>
+                    <div>
+                        <a href="WebDev_Website_Home.html">Home</a>
+                        <a href="WebDev_Website_World.html">World</a>
+                        <a href="WebDev_Website_Sports.html">Sports</a>
+                        <a class="active"style="">Science</a>
+                        <a href="WebDev_Website_Extra.html">Extra</a>
+                    </div>
 
+                </div>
+                <div style="background-color: white;margin-left: 5%;margin-right: 5%;text-align: center;padding-top: 30%;padding-bottom: 15%;">
+                    <table> 
+                        <tr>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
+                                <img src="Images\Cats.png"/>
+                                <h2 id = "title #6">What cats are trying to tell you</h2>
+                                <p id = "story #6">Of course its in their own words</p>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
+                                <img src="Images\Coin.png"/>
+                                <h2 id = "title #7">What is real the science behind coin flips</h2>
+                                <p id = "story #7">It'll change how you think about the world</p>
+                            </div>                
+                        </tr>
+                        <tr>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
+                                <img src="Images\Space.png"/>
+                                <h2 id = "title #8">Astrology vs Astronomy</h2>
+                                <p id = "story #8">Which can be trusted? Are they both out of this world?</p>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
+                                <img src="Images\Hampter.png"/>
+                                <h2 id = "title #9">Where does your electricity come from?</h2>
+                                <p id = "story #9"></p>    
+                            </div>          
+                        </tr>
+                        <tr>
+                            <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
+                                <img src="Images\Gas_Stove.png"/>
+                                <h2 id = "title #10">Gas stove? Seems solid to me</h2>
+                                <p id = "story #10">Another heated debate to be left on the back burner</p>
+                            </div>      
+                        </tr>
+                    </table>
+
+                </div>
+                <footer class="footerMobile">
+                    <p>Download App to get full features</p>
+                </footer>
+            </div>
         </body>
 </html>

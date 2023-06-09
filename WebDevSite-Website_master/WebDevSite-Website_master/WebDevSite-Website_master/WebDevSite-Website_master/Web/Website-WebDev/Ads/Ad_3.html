@@ -5,15 +5,22 @@
       <link rel="stylesheet" href="WebDev_Design.css">
         <style>
           #map {
-            height: 600px;
-            width: 600px;
+            height: 400px;
+            width: 400px;
         }
         </style>
   </head>
-    <body>
+    <body style = "background-color: aquamarine; padding-bottom: 20px;">
       <div id="marquee"></div>
 
-      <div id="map"></div>
+      <h1 style = "text-align: center; font-size: 50px;">Places near you</h1>
+
+      <div id="map" style = "border: 5px solid;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;"></div>
 
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   </body>

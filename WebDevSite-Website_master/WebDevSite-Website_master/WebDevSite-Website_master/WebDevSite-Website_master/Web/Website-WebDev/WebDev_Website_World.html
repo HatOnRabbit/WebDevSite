@@ -10,15 +10,29 @@
         <link rel="stylesheet" href="WebDev_Design.css">
 
     </head>
+
+    <style>
+        #map {
+          height: 600px;
+          width: 600px;
+        }
+      </style>
+
         <body>
+            <div class="Mobile">
+                <div class="navBarMobile">
+                    <h1 style="text-align:left;font-size: x-large;">Buckingham News</h1>
+                    <div>
+                        <a href="WebDev_Website_Home.html">Home</a>
+                        <a class="active"style="">World</a>
+                        <a href="WebDev_Website_Sports.html">Sports</a>
+                        <a href="WebDev_Website_Science.html">Science</a>
+                        <a href="WebDev_Website_Extra.html">Extra</a>
+                    </div>
 
-        <style>
-            #map {
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-
+                </div>
+            </div>
+            <div class="Desktop">
             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
             <!-- Half page HTML -->
@@ -28,13 +42,10 @@
                 <h1 id = "titleHolder" style="border-bottom: solid 5px rgb(0, 0, 120); border-top: solid 5px  rgb(0, 0, 120); height: 4rem; color:white; text-align: center; background-color: rgb(0, 0, 206); line-height: 4rem;">Story Title</h1>
                 <p id="storyHolder" style="color: white; text-align: left; padding: 3rem; font-size: 25px; text-indent: 2rem; line-height: 1.5;">This is where the story goes</p>
                 <div style="display: flex; justify-content: center;">
-                    <button style = "font-size: 1rem; margin-bottom: 30px;" onclick = "ToggleHalfPage()">Close</button>
+                    <button style = "font-size: 1rem; margin-bottom: 30px;" onclick="ToggleHalfPage()">Close</button>
                 </div>
                   
               </div>
-
-
-
 
               <!-- This is for the header -->
               <div class="navBar">
@@ -43,8 +54,8 @@
                     <div class = "DateTime"><h5 id = "Today"></h5></div>
                     <div style="display: flex; justify-content: flex-end;">
                         <a href = "WebDev_Website_Home.html">Home</a>
-                        <a class="active">World</a>
-                        <a href="WebDev_Website_Sports.html">Sports</a>
+                        <a class = "active">World</a>
+                        <a href = "WebDev_Website_Sports.html">Sports</a>
                         <a href="WebDev_Website_Science.html">Science</a>
                         <a href="WebDev_Website_Extra.html">Extra</a>
                         <button onclick="openLogin()">Sign In</button>
@@ -88,50 +99,22 @@
                     </marquee>
                 </div>
                 
-                <h1 style = "border-top: 1px solid black; border-bottom: 1px solid black; color: white; text-shadow: -1px -1px 4px #301934; font-size: 35px; background: #A020F0; margin-right: 16%; width: 100%; padding-left: 16%; margin-top: 30px;">World Map</h1>
-                
-                <div style="height: 100rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
+                <h1 style = "border-top: 1px solid black; border-bottom: 1px solid black; color: white; text-shadow: -1px -1px 4px #301934; font-size: 35px; background: #A020F0; margin-right: 16%; width: 100%; padding-left: 16%; margin-top: 30px;">Map</h1>
                 
                 </div>
+                </div>
 
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="WebDev_Website_Home.js"></script>
-
-</body>
-
-<script>
-    const latitude = 51.9995;
-    const longitude = -0.9864;
-    
-      const apiKey = '7aa2af53dfb50efa5c75596671fd8b1b';
-    
-      var map = L.map('map').setView([51.9995, -0.9864], 10);
-    
-      // Add tile layer (e.g., OpenStreetMap)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-        maxZoom: 18
-      }).addTo(map);
-    
-      // Fetch weather data from OpenWeatherMap API
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
-    
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          var weatherDescription = data.weather[0].description;
-          var weatherIconUrl = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '.png';
-    
-          // Add weather marker to the map
-          var weatherMarker = L.marker([51.9995, -0.9864]).addTo(map);
-          //var weatherMarker = L.marker([51.9995, 105.318756]).addTo(map);
-          weatherMarker.bindPopup('Hang yourself');
-              console.log(weatherDescription);
-        })
-        .catch(error => {
-          console.log('Error fetching weather data:', error);
-        });
-</script>
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="WebDev_Website_Home.js"></script>
+                <div  style = "height: 50rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19652.036837944313!2d-0.9908788008091418!3d51.99768242635347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876e1098aea9191%3A0xee092e76e65ad2b!2sBuckingham!5e0!3m2!1sen!2suk!4v1686335246975!5m2!1sen!2suk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="Mobile">
+            <footer class="footerMobile">
+                <p>Download App to get full features</p>
+            </footer>
+        </div>
+        </body>
 </html>
-    

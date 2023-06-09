@@ -1,3 +1,24 @@
+.footerMobile{
+    padding: 4%;
+    background-color: slategray;
+    z-index: 1;
+    text-align: center;
+}
+
+.Desktop{
+    display: block;
+}
+.Mobile{
+    display: none;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .Mobile{display: block;}       
+    .Desktop{display: none;}
+}
+
+
+
 html, body, #page {
     height:auto;
     width:100%;
@@ -16,10 +37,12 @@ body::-webkit-scrollbar{
     display: none;
 }
 
-#map {
-    height: 400px; 
-    width: auto;
-}
+.custom-gmap-class {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
+  }
 
 .DateTime{
     float: left;
@@ -59,12 +82,18 @@ body::-webkit-scrollbar{
     100% {transform: translateX(-100%);}
 }
 
-.navBar{
+.navBar,.navBarMobile{
     background: #A020F0;
     overflow: hidden;
     margin-top: 40px;
     padding: 10px;
     border-bottom: #6c10a5 solid 2px;
+}
+
+.navBarMobile{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 .navBar a{
@@ -73,6 +102,12 @@ body::-webkit-scrollbar{
     color: white;
     margin-top: 0;
     padding: 15px;
+}
+
+.navBarMobile a{
+    font-size: 18px;
+    color: white;
+    padding: 8px;
 }
 
 .navBar a:hover{
@@ -91,6 +126,11 @@ body::-webkit-scrollbar{
     background-color: white;
 }
 
+.navBarMobile a.active{
+    background-color: white;
+    color: #301934;
+}
+
 .navBar h1{
     width: 300px;
     height: 3rem;
@@ -104,6 +144,11 @@ body::-webkit-scrollbar{
     text-shadow: -1px -1px 4px #301934;
     white-space: nowrap;
 
+}
+.navBarMobile h1{
+    font-size: 28px;
+    color: white;
+    text-shadow: -1px -1px 4px #301934;
 }
 
 .navBar h5{
@@ -240,6 +285,7 @@ transform: translateX(-25%) translateZ(0) scaleY(0.55)
 transform: translateX(-50%) translateZ(0) scaleY(1)
 }
 }
+
 
 
 .waveWrapper {
