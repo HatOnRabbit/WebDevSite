@@ -18,6 +18,7 @@ body::-webkit-scrollbar{
 
 #map {
     height: 400px; 
+    width: auto;
 }
 
 .DateTime{
@@ -61,7 +62,7 @@ body::-webkit-scrollbar{
 .navBar{
     background: #A020F0;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 10px;
     border-bottom: #6c10a5 solid 2px;
 }

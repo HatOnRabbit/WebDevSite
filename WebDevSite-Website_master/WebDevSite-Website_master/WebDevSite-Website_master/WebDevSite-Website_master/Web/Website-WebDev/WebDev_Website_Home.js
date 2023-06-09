@@ -163,4 +163,3 @@ function debounce(func, delay) {
   window.addEventListener('scroll', debounce(handleScroll, 1));
   
 // This is for the live weather map -----------------------------------------------------------------------------------------------------------------
-

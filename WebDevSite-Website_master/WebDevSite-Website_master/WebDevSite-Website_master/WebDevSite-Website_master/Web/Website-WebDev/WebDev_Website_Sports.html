@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" href="WebDev_Design.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="WebDev_Design.css">
 
     </head>
         <body>
+
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+            <!-- Half page HTML -->
 
             <div id="halfPage">
                 <!-- Content of the half-page goes here -->
@@ -17,106 +26,113 @@
                   
               </div>
 
-            <div class="waveWrapper waveAnimation">
-                <div class="waveWrapperInner bgTop">
-                  <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-                </div>
-                <div class="waveWrapperInner bgMiddle">
-                  <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-                </div>
-                <div class="waveWrapperInner bgBottom">
-                  <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-                </div>
+              <!-- This is for the header -->
+              <div class="navBar">
+                    <!-- This is for the title -->
+                    <h1>Buckingham Sports News</h1>
+                    <div class = "DateTime"><h5 id = "Today"></h5></div>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <a href = "WebDev_Website_Home.html">Home</a>
+                        <a href = "WebDev_Website_World.html">World</a>
+                        <a class="active">Sports</a>
+                        <a href="WebDev_Website_Science.html">Science</a>
+                        <a href="WebDev_Website_Extra.html">Extra</a>
+                        <button onclick="openLogin()">Sign In</button>
+                    </div>
               </div>
 
-            <!-- This is for the header -->
-            <div class="navBar">
-                <!-- This is for the title -->
-                <h1>Buckingham Sports News</h1>
-                <div style="display:flex; justify-content: flex-end;">
-                    <a href = "WebDev_Website_Home.html">Home</a>
-                    <a href = "WebDev_Website_World.html">World</a>
-                    <a class = "active">Sports</a>
-                    <a href = "WebDev_Website_Science.html">Science</a>
-                    <a href = "WebDev_Website_Extra.html">Extra</a>
-                    <button onclick="openLogin()">Sign In</button>
+            <!--login-->
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <h2>Login</h2>
+                    <label><b>Username</b></label>
+                    <input style="width:90%;padding: 10px 5%;" type="text" placeholder="Enter Username" required>
+                    <label><b>password</b></label>
+                    <input style="width:90%;padding: 10px 5%;" type="password" placeholder="Enter password" required>
+                    <button style="width:100%;padding: 10px 5%;">login</button>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                    <div>
+                        <button onclick="closeLogin()">close</button>
+                    </div>
+                   
                 </div>
             </div>
 
+            <!-- Weather -->
+
+            <div style = "width: 100%;" onload = "Weather()">
+                <h1 id = "weather" style = "color:white; text-align: center;">Weather</h1>
+            </div>
+
             <body>
-                
-                <h1 style = "text-shadow: -1px -1px 4px #ffb765; font-size: 35px; background: linear-gradient(to bottom, #009ac9, #007bff); border-bottom: 4px solid rgb(0, 0, 0); border-top: 4px solid rgb(0, 0, 0); padding-left: 50px; padding-bottom: 0px; margin-bottom: 0px;">Stories</h1>
+                <!-- This is for the breaking news part -->
 
-                <div style = "height: 80%; background: linear-gradient(to bottom, #00638173, #003b7977); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 40px; margin-right: 40px;">
-                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <img style="margin-bottom: 10px;" src="Images\Paul.jpg" alt="Paul" />
-                        </div>
-                        <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <h2 id = "title #0">White Hart House Arrest</h2>
-                        </div>
-                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
-                        </div>
-                    </div>
-    
-                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <img style="margin-bottom: 10px;" src="Images/Allie the Alligator.jpg" alt="Paul" />
-                        </div>
-                        <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <h2 id = "title #1">Alligators strike in local town</h2>
-                        </div>
-                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <p id = "story #1">In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.</p>
-                        </div>
-                    </div>
-
-                    <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
-                        <div style="display: flex; justify-content: center; align-items: center;">
-                            <img style="margin-bottom: 10px;" src="Images\Computing_Student.png" alt="Paul" />
-                        </div>
-                        <div style="text-align: center; display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
-                        </div>
-                        <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
-                            <p id = "story #2">Can you fix the internet for me?</p>
-                        </div>
-                    </div>
-
+                <div id = "Breaking_News">
+                    <img style="position: absolute; z-index: 10; height: 60px; width: auto; margin-top: -3px; right: 0;" src="Images\Breaking_News.png" alt="Breaking news" />
                 </div>
 
-                <script>
+                <!-- This is for the marquee scrolling -->
+                <div style="background-color: rgb(255, 255, 150); height: 50px; margin:0; padding:0; border-bottom: 1px solid rgb(0, 0, 0); border-top: 1px solid rgb(0, 0, 0);">
+                    <marquee style="margin:0; padding:0; line-height: 50px" behavior="scroll" direction="left" scrollamount="10" onend="updateMarquee()">
+                        <font size="+2"><b><span id="marquee"></span></b></font>
+                    </marquee>
+                </div>
+                
+                <h1 style = "border-top: 1px solid black; border-bottom: 1px solid black; color: white; text-shadow: -1px -1px 4px #301934; font-size: 35px; background: #A020F0; margin-right: 16%; width: 100%; padding-left: 16%; margin-top: 30px;">Stories</h1>
+                
+                <div  style = "height: 100rem; background: white; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; border-bottom: 2px solid #000000; border-right: 2px solid #000000; border-left: 2px solid #000000; margin-left: 16%; margin-right: 16%;">
+                    <!--Bootstrap Table for cards-->
+                <div class="container-fluid" >
+                    <div class="row">
+                        <div class="cardBig" onclick="ToggleHalfPage(); WriteToHalfPage(0); WriteToHalfPageTitle(0);">
+                            <img src="Images\Paul.jpg"/>
+                            <h2 id = "title #0">White Hart House Arrest</h2>
+                            <p id = "story #0">Local man forced to reside in The White Hart pub after voicing concerns over living conditions within the establishment.</p>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(1); WriteToHalfPageTitle(1);">
+                                    <img src="Images/Allie the Alligator.jpg"/>
+                                    <h2 id = "title #1">Alligators strike in local town</h2>
+                                    <p id = "story #1">The local Alligator population has overun the town center</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(2); WriteToHalfPageTitle(2);">
+                                    <img src="Images\Computing_Student.png"/>
+                                    <h2 id = "title #2">Top 10 things not to say to Computing students</h2>
+                                    <p id = "story #2">You will not believe number 10!</p>
 
-                    function ToggleHalfPage() { //This opens & closes half page
-                        //console.log("Testing");
-                        var halfPage = document.getElementById("halfPage");
-                        halfPage.classList.toggle("open");
-                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(3); WriteToHalfPageTitle(3);">
+                            <img src="Images\AI_Image.png" alt="AI" />
+                            <h2 id = "title #3">The Perils of AI-Generated News Articles</h2>
+                            <p id = "story #3">In an age dominated by rapid advancements in Artificial Intelligence (AI)</p>
+                        </div>
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(4); WriteToHalfPageTitle(4);">
+                            <img src="Images\Map.png" alt="Map" />
+                            <h2 id = "title #4">Map Burners get lost</h2>
+                            <p id = "story #4">Climate Change activists get lost after burning all of Buckingham's supply of maps</p>
+                        </div>
+                            
+                        <div class="card" onclick="ToggleHalfPage(); WriteToHalfPage(5); WriteToHalfPageTitle(5);">
+                            <img src="Images\GS_Cookie.jpg" alt="Girl Scouts" />
+                            <h2 id = "title #5">Girl Scouts Getting Aggressive</h2>
+                            <p id = "story #5">Girl Scouts arming themselves to the teeth admist local cookies sales decrease</p>
+                        </div>
+                    </div>
+              
 
-                    function WriteToHalfPageTitle(number) { //Writes the story's title into the half page
-                        //console.log("story #" + number);
+                </div>
+                </div>
 
-                        var paragraphSubject = document.getElementById("title #" + number);
-                        var paragraphTarget = document.getElementById("titleHolder");
-                        paragraphTarget.textContent = paragraphSubject.textContent;
-                    }
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="WebDev_Website_Home.js"></script>
 
-                    function WriteToHalfPage(number) { //Writes the stories into the half page
-                        //console.log("story #" + number);
-
-                        // Stories:
-                        var stories = [
-                            "Local man was forced to live in White Hart after he posted Yelp review saying that 'he didn't fancy the living conditions of the establishment'. This sparked out rage as the community have locked him inside and forced him to stay longer unitl he writes a better review.",
-                            "In an unexpected turn of events, alligators in Buckingham have gone on strike and are refusing to let humans use the river walkway. The reptilian workers are fed up with the lack of safety measures in place, and have decided to take matters into their own claws.",
-                            "The first thing you should never say to a computing student is; Number one: Can you fix my computer? It's making a weird noise, like 'beep boop'! Number two: You're a computer science student? So, you must know how to hack into anyone's Facebook, right? Number three: Oh, you're studying programming? Can you write a program that will do all my assignments for me? Number four: Computers are so easy, even my grandma can use them. What's the big deal? Number five: Why are you studying computer science? Aren't robots going to take over the world and steal your job? Number six: I have this great idea for an app. I'll tell you the concept, and you can do all the coding for me, deal? Number seven: Computing is just typing, right? Anyone can type! Number eight: I heard you're studying algorithms. Can you solve this math problem for me? It's been bugging me for days. Number nine: I bet you spend all your time playing video games instead of studying. Number ten: Computing is so boring. I don't know how you can enjoy it."
-                        ];
-
-                        //console.log(stories[number]);
-
-                        var paragraphTarget = document.getElementById("storyHolder"); // This is the storyHolder
-                        paragraphTarget.textContent = stories[number];
-                    }
-                </script>
-            </body>
+        </body>
 </html>
