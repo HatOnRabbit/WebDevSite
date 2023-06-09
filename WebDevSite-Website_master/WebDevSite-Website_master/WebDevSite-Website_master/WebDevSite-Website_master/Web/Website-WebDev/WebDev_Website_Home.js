@@ -1,13 +1,13 @@
 // List of silly
 var phrases = ["'Brexit wasn't enough, Buckingham should be separate from UK' -says angry man",
-"Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'",
-"'Man fixes Twisted Chimney's chimney with braces'",
-"'Local man shouting at birds to stop evading taxes' more at 9PM EST",
-"James Tooley caught doing donuts in stolen Tesla",
-"Computing Students stage protest as they are expected to do Computing Modules",
-"Tourists flock to Buckingham thinking it was Buckingham Palace",
-"The crown jewels were mistakingly rerouted to Buckingham instead of Buckingham Palace",
-"Local animals create union to deal with Swan attacks"
+    "Student eats artwork of a banana duct-taped to a museum wall because 'he was hungry'",
+    "'Man fixes Twisted Chimney's chimney with braces'",
+    "'Local man shouting at birds to stop evading taxes' more at 9PM EST",
+    "James Tooley caught doing donuts in stolen Tesla",
+    "Computing Students stage protest as they are expected to do Computing Modules",
+    "Tourists flock to Buckingham thinking it was Buckingham Palace",
+    "The crown jewels were mistakingly rerouted to Buckingham instead of Buckingham Palace",
+    "Local animals create union to deal with Swan attacks"
 ];
 var currentPhraseIndex = Math.floor(Math.random() * phrases.length);
 document.getElementById("marquee").innerHTML = phrases[currentPhraseIndex];
@@ -130,3 +130,37 @@ axios.get(apiUrl)
     console.log('Error fetching weather data:', error);
     });
 };
+
+// This is for the background ---------------------------------------------------------------------------------------------------------------------------------------
+// Ref : https://codepen.io/renanpupin/pen/RPmXdr
+
+// Add an event listener to track scroll position
+// Debounce function to limit the frequency of function execution
+function debounce(func, delay) {
+    let timer;
+    return function() {
+      clearTimeout(timer);
+      timer = setTimeout(func, delay);
+    };
+  }
+  
+
+  // Function to handle scroll events
+  function handleScroll() {
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+  
+    console.log('Scroll position:', scrollPosition, 'px', '/', Math.floor((scrollPosition / window.innerHeight) * 106), '%');
+  
+    let color = (Math.floor((((scrollPosition / window.innerHeight) * 100))) + 10).toString(16);
+    let color2 = (Math.floor((((scrollPosition / window.innerHeight) * 100))) + 82).toString(16)
+
+    console.log(`#${color2}${color}FF`);
+  
+    document.body.style.backgroundColor = `#${color2}${color}FF`;
+  }
+
+  // Add a debounced event listener to track scroll position
+  window.addEventListener('scroll', debounce(handleScroll, 1));
+  
+// This is for the live weather map -----------------------------------------------------------------------------------------------------------------
+
