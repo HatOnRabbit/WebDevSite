@@ -93,9 +93,20 @@ const longitude = -0.9864;
 // Define the URL for the current weather API endpoint
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
-console.log(apiUrl);
+//console.log(apiUrl);
 
-console
+// Calculate milliseconds in a year
+const minute = 1000 * 60;
+const hour = minute * 60;
+const day = hour * 24;
+const year = day * 365;
+
+// Divide Time with a year
+const date = new Date();
+
+console.log((date.getMonth() + 1) + "/" + date.getDate() + "/" + (1970 + Math.round(date.getTime() / year)));
+
+document.getElementById("Today").textContent = (date.getMonth() + 1) + "/" + date.getDate() + "/" + (1970 + Math.round(date.getTime() / year))
 
 //GET time
 axios.get(apiUrl)
@@ -108,8 +119,8 @@ axios.get(apiUrl)
     const city = response.data.name;
 
     // Display the weather report using console.log or update your HTML
-    console.log(`Weather in ${city}: ${weatherData.description}`);
-    console.log(`Temperature: ${temperatureInFahrenheit}°F`);
+    //console.log(`Weather in ${city}: ${weatherData.description}`);
+    //console.log(`Temperature: ${temperatureInFahrenheit}°F`);
 
     //Change the tempature
     const weatherElement = document.getElementById('weather');
